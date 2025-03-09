@@ -4,7 +4,7 @@ import { FaComputer } from "react-icons/fa6";
 import Otp from "@/components/otp";
 import { useState } from "react";
 import { FaRegClock } from "react-icons/fa6";
-
+import clsx from "clsx";
 
 export default function Home() {
 
@@ -29,7 +29,7 @@ export default function Home() {
             <FaRegClock className="text-blue-200 mr-2"/>
             <h1>time</h1>
           </div>
-          <button disabled={disable} className="w-full bg-teal-700 text-gray-200 text-center p-2 text-xl font-semibold rounded-2xl mb-5">Verify</button>
+          <button disabled={disable} onClick={()=>console.log(disable)} className={clsx("w-full text-gray-200 text-center p-2 text-xl font-semibold rounded-2xl mb-5", disable && "bg-gray-500 cursor-not-allowed",!disable && "bg-teal-700 cursor-pointer")}>Verify</button>
           <h1 className="text-center text-gray-300 cursor-pointer">Didn't recieve the otp? click <span className="hover:underline text-blue-300">here</span></h1>
         </div>
       </div>
